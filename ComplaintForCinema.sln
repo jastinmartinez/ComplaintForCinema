@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.808.7
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComplaintForCiname.TL", "ComplaintForCiname.TL\ComplaintForCiname.TL.csproj", "{0DA1B79D-6558-437B-ACBC-FD883069DDDC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComplaintForCinema.UI", "ComplaintForCinema.UI\ComplaintForCinema.UI.csproj", "{9175DFD3-3596-44CF-8DAC-07D7449F4813}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComplaintForCinema.DAL", "ComplaintForCinema.DAL\ComplaintForCinema.DAL.csproj", "{39F3770B-596A-4289-839A-57F29FFA0EC9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComplaintForCinema.DAL", "CinemaComplaint.DAL\ComplaintForCinema.DAL.csproj", "{5188F6C3-6D5F-42CC-81CB-CD04F7172897}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComplaintForCinema.BLL", "ComplaintForCinema.BLL\ComplaintForCinema.BLL.csproj", "{5362D5D2-4B3E-493C-B8D8-F3AF1E5973BC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComplaintForCinema.BLL", "CinemaComplaint.BLL\ComplaintForCinema.BLL.csproj", "{0AEFF2BD-5639-4AED-ADF9-65DF73D7F5AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComplaintForCinema.TL", "CinemaComplaint.TL\ComplaintForCinema.TL.csproj", "{23FAB1BB-B51A-48F1-A34F-6DA6C6840F1B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,18 +17,22 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0DA1B79D-6558-437B-ACBC-FD883069DDDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0DA1B79D-6558-437B-ACBC-FD883069DDDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0DA1B79D-6558-437B-ACBC-FD883069DDDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0DA1B79D-6558-437B-ACBC-FD883069DDDC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{39F3770B-596A-4289-839A-57F29FFA0EC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{39F3770B-596A-4289-839A-57F29FFA0EC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{39F3770B-596A-4289-839A-57F29FFA0EC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{39F3770B-596A-4289-839A-57F29FFA0EC9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5362D5D2-4B3E-493C-B8D8-F3AF1E5973BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5362D5D2-4B3E-493C-B8D8-F3AF1E5973BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5362D5D2-4B3E-493C-B8D8-F3AF1E5973BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5362D5D2-4B3E-493C-B8D8-F3AF1E5973BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9175DFD3-3596-44CF-8DAC-07D7449F4813}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9175DFD3-3596-44CF-8DAC-07D7449F4813}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9175DFD3-3596-44CF-8DAC-07D7449F4813}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9175DFD3-3596-44CF-8DAC-07D7449F4813}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5188F6C3-6D5F-42CC-81CB-CD04F7172897}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5188F6C3-6D5F-42CC-81CB-CD04F7172897}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5188F6C3-6D5F-42CC-81CB-CD04F7172897}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5188F6C3-6D5F-42CC-81CB-CD04F7172897}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AEFF2BD-5639-4AED-ADF9-65DF73D7F5AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AEFF2BD-5639-4AED-ADF9-65DF73D7F5AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AEFF2BD-5639-4AED-ADF9-65DF73D7F5AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AEFF2BD-5639-4AED-ADF9-65DF73D7F5AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23FAB1BB-B51A-48F1-A34F-6DA6C6840F1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23FAB1BB-B51A-48F1-A34F-6DA6C6840F1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23FAB1BB-B51A-48F1-A34F-6DA6C6840F1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23FAB1BB-B51A-48F1-A34F-6DA6C6840F1B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
