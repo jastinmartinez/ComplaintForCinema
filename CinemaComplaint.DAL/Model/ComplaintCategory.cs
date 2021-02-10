@@ -11,5 +11,7 @@ namespace ComplaintForCinema.DAL.Model
         public Guid ComplaintCategoryID { get; set; }
         public string ComplaintCategoryDescription { get; set; }
         public bool ComplaintCategoryIsActive { get; set; }
+
+       
     }
 }

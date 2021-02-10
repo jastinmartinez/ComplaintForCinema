@@ -17,6 +17,11 @@ namespace ComplaintForCinema.DAL.Repository.Repository
             return dbConnection.Delete(new ComplaintStatus { ComplaintStatusID = obj.ComplaintStatusID, ComplaintStatusDescription = obj.ComplaintStatusDescription, ComplaintStatusIsActive = obj.ComplaintStatusIsActive });
         }
 
+        public ComplaintStatus Get(ComplaintStatus obj)
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<ComplaintStatus> GetAll()
         {
             return dbConnection.GetAll<ComplaintStatus>();

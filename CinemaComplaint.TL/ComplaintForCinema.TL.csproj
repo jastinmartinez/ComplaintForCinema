@@ -52,8 +52,8 @@
     <Compile Include="DAL\ComplaintCategoryRepositoryUnitTest.cs" />
     <Compile Include="DAL\ComplaintLocationRepositoryUnitTest.cs" />
     <Compile Include="DAL\ComplaintStatusRepositoryUnitTest.cs" />
-    <Compile Include="DAL\IGenericRepositoryUnitTest.cs" />
-    <Compile Include="DAL\TestExample.cs" />
+    <Compile Include="Interface\IGenericRepositoryUnitTest.cs" />
+    <Compile Include="BLL\ComplaintCategoryRepositoryServiceUnitTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

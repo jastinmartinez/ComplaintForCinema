@@ -6,7 +6,7 @@ using ComplaintForCinema.DAL.Model;
 using DAL.Repository;
 using Dapper.Contrib.Extensions;
 
-namespace ComplaintForCinema.DAL.Repository.Method
+namespace ComplaintForCinema.DAL.Repository.Repository
 {
     public class ComplaintCategoryRepository : IGenericRepository<ComplaintCategory>
     {
@@ -16,7 +16,7 @@ namespace ComplaintForCinema.DAL.Repository.Method
         {
             return dbConnector.Insert(new ComplaintCategory
             {
-                ComplaintCategoryID = obj.ComplaintCategoryID,
+                ComplaintCategoryID = Guid.NewGuid(),
                 ComplaintCategoryDescription = obj.ComplaintCategoryDescription,
                 ComplaintCategoryIsActive = obj.ComplaintCategoryIsActive
             });
@@ -35,6 +35,11 @@ namespace ComplaintForCinema.DAL.Repository.Method
         public bool Update(ComplaintCategory obj)
         {
             return dbConnector.Update(new ComplaintCategory { ComplaintCategoryID = obj.ComplaintCategoryID, ComplaintCategoryDescription = obj.ComplaintCategoryDescription, ComplaintCategoryIsActive = obj.ComplaintCategoryIsActive });
+        }
+
+        public ComplaintCategory Get(ComplaintCategory obj)
+        {
+            return dbConnector.Get<ComplaintCategory>(obj.ComplaintCategoryID);
         }
     }
 }

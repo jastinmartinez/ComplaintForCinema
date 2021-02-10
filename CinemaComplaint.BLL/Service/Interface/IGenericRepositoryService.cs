@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CinemaComplaint.BLL.Service.Interface
 {
-    public interface IGenericService<T> where T : class
+    public interface IGenericRepositoryService<T> where T : class
     {
         IEnumerable<T> GetAll();
 
@@ -15,5 +15,7 @@ namespace CinemaComplaint.BLL.Service.Interface
         bool Update(T obj);
 
         bool Delete(T obj);
+
+        T Get(T obj);
     }
 }

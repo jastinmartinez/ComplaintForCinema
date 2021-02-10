@@ -34,6 +34,9 @@
     <Reference Include="AutoMapper, Version=10.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <HintPath>..\packages\AutoMapper.10.1.1\lib\net461\AutoMapper.dll</HintPath>
     </Reference>
+    <Reference Include="FluentValidation, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.9.5.0\lib\net461\FluentValidation.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -44,11 +47,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dto\ComplaintCategoryDto.cs" />
+    <Compile Include="Dto\ComplaintDto.cs" />
+    <Compile Include="Dto\ComplaintJobHistoryDto.cs" />
+    <Compile Include="Dto\ComplaintLocationDto.cs" />
+    <Compile Include="Exceptions\UserValidationException.cs" />
     <Compile Include="MapperConfig\AutoMapperConfiguration.cs" />
     <Compile Include="Dto\ComplaintStatusDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service\ComplaintStatusService.cs" />
-    <Compile Include="Service\Interface\IGenericService.cs" />
+    <Compile Include="Service\Repositoty\ComplaintCategoryRepositoryService.cs" />
+    <Compile Include="Service\Repositoty\ComplaintLocationRepositoryService.cs" />
+    <Compile Include="Service\Repositoty\ComplaintStatusRepositoryService.cs" />
+    <Compile Include="Service\Interface\IGenericRepositoryService.cs" />
+    <Compile Include="Validation\ComplaintCategoryDtoValidator.cs" />
+    <Compile Include="Validation\ComplaintLocationDtoValidator.cs" />
+    <Compile Include="Validation\ComplaintStatusDtoValidator.cs" />
+    <Compile Include="Validation\Interface\IDtoValidator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

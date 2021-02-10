@@ -12,34 +12,39 @@ using System.Collections.Generic;
 
 namespace CinemaComplaint.BLL.Service
 {
-    public class ComplaintStatusService : IGenericService<ComplaintStatusDto>
+    public class ComplaintStatusRepositoryService : IGenericRepositoryService<ComplaintStatusDto>
     {
 
         private readonly IGenericRepository<ComplaintStatus> complaintStatusRepo;
      
-        public ComplaintStatusService()
+        public ComplaintStatusRepositoryService()
         {
             complaintStatusRepo = new ComplaintStatusRepository();
         }
 
         public bool Delete(ComplaintStatusDto obj)
         {
-            return complaintStatusRepo.Delete(AutoMapperConfiguration.Mapper.Map<ComplaintStatus>(obj));
+            return complaintStatusRepo.Delete(AutoMapperConfiguration.To.Map<ComplaintStatus>(obj));
+        }
+
+        public ComplaintStatusDto Get(ComplaintStatusDto obj)
+        {
+            throw new NotImplementedException();
         }
 
         public IEnumerable<ComplaintStatusDto> GetAll()
         {
-            return AutoMapperConfiguration.Mapper.Map<IEnumerable<ComplaintStatusDto>>(complaintStatusRepo.GetAll());
+            return AutoMapperConfiguration.To.Map<IEnumerable<ComplaintStatusDto>>(complaintStatusRepo.GetAll());
         }
 
         public long Insert(ComplaintStatusDto obj)
         {
-            return complaintStatusRepo.Insert(AutoMapperConfiguration.Mapper.Map<ComplaintStatus>(obj));
+            return complaintStatusRepo.Insert(AutoMapperConfiguration.To.Map<ComplaintStatus>(obj));
         }
 
         public bool Update(ComplaintStatusDto obj)
         {
-            return complaintStatusRepo.Update(AutoMapperConfiguration.Mapper.Map<ComplaintStatus>(obj));
+            return complaintStatusRepo.Update(AutoMapperConfiguration.To.Map<ComplaintStatus>(obj));
         }
     }
 }

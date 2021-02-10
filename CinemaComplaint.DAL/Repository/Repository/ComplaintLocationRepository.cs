@@ -16,6 +16,11 @@ namespace ComplaintForCinema.DAL.Repository.Repository
             return dbConnection.Delete(new ComplaintLocation { ComplaintLocationID = obj.ComplaintLocationID });
         }
 
+        public ComplaintLocation Get(ComplaintLocation obj)
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<ComplaintLocation> GetAll()
         {
             return dbConnection.GetAll<ComplaintLocation>();

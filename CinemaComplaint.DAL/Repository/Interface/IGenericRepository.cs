@@ -13,5 +13,7 @@ namespace DAL.Repository
 
         bool Delete(T obj);
 
+        T Get(T obj);
+
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using ComplaintForCiname.TL.DAL.Interface;
 using ComplaintForCinema.DAL.Model;
 using ComplaintForCinema.DAL.Repository.Repository;
 using DAL.Repository;

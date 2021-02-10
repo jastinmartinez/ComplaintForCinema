@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace ComplaintForCiname.TL.DAL
+namespace ComplaintForCiname.TL.DAL.Interface
 {
     public interface IGenericRepositoryUnitTest
     {

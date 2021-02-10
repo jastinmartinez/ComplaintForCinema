@@ -13,7 +13,7 @@ namespace ComplaintForCinema.DAL.Helper
             get
             {
                 if (_dbConnection is null)
-                    return new SqlConnection("Server=.;Database=CinemaComplaint;User Id=sa; Password=Admin00v@*; MultipleActiveResultSets=True");
+                    return new SqlConnection("Server=.;Database=ComplaintCinema;User Id=sa; Password=Admin00v@*; MultipleActiveResultSets=True");
 
                 return _dbConnection;
             }
