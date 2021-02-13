@@ -48,8 +48,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dto\ComplaintCategoryDto.cs" />
-    <Compile Include="Dto\ComplaintDto.cs" />
-    <Compile Include="Dto\ComplaintJobHistoryDto.cs" />
     <Compile Include="Dto\ComplaintLocationDto.cs" />
     <Compile Include="Exceptions\UserValidationException.cs" />
     <Compile Include="MapperConfig\AutoMapperConfiguration.cs" />

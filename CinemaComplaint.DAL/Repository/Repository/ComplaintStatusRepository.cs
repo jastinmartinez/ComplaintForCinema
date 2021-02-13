@@ -19,7 +19,7 @@ namespace ComplaintForCinema.DAL.Repository.Repository
 
         public ComplaintStatus Get(ComplaintStatus obj)
         {
-            throw new NotImplementedException();
+            return dbConnection.Get<ComplaintStatus>(obj.ComplaintStatusID);
         }
 
         public IEnumerable<ComplaintStatus> GetAll()
@@ -29,7 +29,7 @@ namespace ComplaintForCinema.DAL.Repository.Repository
 
         public long Insert(ComplaintStatus obj)
         {
-            return dbConnection.Insert(new ComplaintStatus { ComplaintStatusID = obj.ComplaintStatusID, ComplaintStatusDescription = obj.ComplaintStatusDescription, ComplaintStatusIsActive = obj.ComplaintStatusIsActive });
+            return dbConnection.Insert(new ComplaintStatus { ComplaintStatusID = Guid.NewGuid(), ComplaintStatusDescription = obj.ComplaintStatusDescription, ComplaintStatusIsActive = obj.ComplaintStatusIsActive });
         }
 
         public bool Update(ComplaintStatus obj)

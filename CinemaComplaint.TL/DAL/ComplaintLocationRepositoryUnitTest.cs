@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Linq;
-using ComplaintForCiname.TL.DAL.Interface;
+using ComplaintForCinema.TL.BLL.Interface;
 using ComplaintForCinema.DAL.Model;
 using ComplaintForCinema.DAL.Repository.Repository;
 using DAL.Repository;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace ComplaintForCiname.TL.DAL
+namespace ComplaintForCinema.TL.DAL
 {
     [TestClass]
     public class ComplaintLocationRepositoryUnitTest : IGenericRepositoryUnitTest
@@ -16,7 +16,7 @@ namespace ComplaintForCiname.TL.DAL
         [TestMethod]
         public void A_Insert()
         {
-            Assert.AreEqual(complaintLocationRepository.Insert(new ComplaintLocation { ComplaintLocationID = Guid.Parse("08C8238C-6A54-4DBE-BB2A-E5813E6B67CA"), ComplaintLocationDescription = "Mega Centro", ComplaintLocationIsActive = true }), 0);
+            Assert.AreEqual(complaintLocationRepository.Insert(new ComplaintLocation { ComplaintLocationDescription = "Example", ComplaintLocationIsActive = true }), 0);
         }
 
         [TestMethod]
@@ -28,13 +28,13 @@ namespace ComplaintForCiname.TL.DAL
         [TestMethod]
         public void C_Update()
         {
-            Assert.IsTrue(complaintLocationRepository.Update(new ComplaintLocation { ComplaintLocationID = Guid.Parse("08C8238C-6A54-4DBE-BB2A-E5813E6B67CA"), ComplaintLocationDescription = "Sambil", ComplaintLocationIsActive = false }));
+            Assert.IsTrue(complaintLocationRepository.Update(new ComplaintLocation { ComplaintLocationID = complaintLocationRepository.GetAll().OrderByDescending(x => x.ComplaintLocationID).FirstOrDefault().ComplaintLocationID, ComplaintLocationDescription = "Sambil", ComplaintLocationIsActive = false }));
         }
 
         [TestMethod]
         public void D_Delete()
         {
-            Assert.IsTrue(complaintLocationRepository.Delete(new ComplaintLocation { ComplaintLocationID = Guid.Parse("08C8238C-6A54-4DBE-BB2A-E5813E6B67CA")}));
+            Assert.IsTrue(complaintLocationRepository.Delete(new ComplaintLocation { ComplaintLocationID = complaintLocationRepository.GetAll().OrderByDescending(x => x.ComplaintLocationID).FirstOrDefault().ComplaintLocationID }));
         }
     }
 }

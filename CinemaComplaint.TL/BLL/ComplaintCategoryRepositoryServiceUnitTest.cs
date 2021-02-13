@@ -1,9 +1,9 @@
-﻿using CinemaComplaint.BLL.Dto;
-using CinemaComplaint.BLL.MapperConfig;
-using CinemaComplaint.BLL.Service;
-using CinemaComplaint.BLL.Service.Interface;
-using ComplaintForCiname.TL.DAL;
-using ComplaintForCiname.TL.DAL.Interface;
+﻿using ComplaintForCinema.BLL.Dto;
+using ComplaintForCinema.BLL.MapperConfig;
+using ComplaintForCinema.BLL.Service;
+using ComplaintForCinema.BLL.Service.Interface;
+using ComplaintForCinema.TL.BLL;
+using ComplaintForCinema.TL.BLL.Interface;
 using ComplaintForCinema.DAL.Repository.Repository;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
@@ -12,7 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CinemaComplaint.TL.DAL
+namespace ComplaintForCinema.TL.BLL
 {
     [TestClass]
     public class ComplaintCategoryRepositoryServiceUnitTest : IGenericRepositoryUnitTest
@@ -36,13 +36,13 @@ namespace CinemaComplaint.TL.DAL
         [TestMethod]
         public void C_Update()
         {
-            Assert.IsTrue(complaintStatusDtoService.Update(new ComplaintCategoryDto { ID = Guid.Parse("08C8238C-6A54-4DBE-BB2A-E5813E6B67CA"), Description = "Update", Status = false }));
+            Assert.IsTrue(complaintStatusDtoService.Update(new ComplaintCategoryDto { ID = complaintStatusDtoService.GetAll().OrderByDescending(x => x.ID).FirstOrDefault().ID, Description = "Update", Status = false }));
         }
 
         [TestMethod]
         public void D_Delete()
         {
-            Assert.IsTrue(complaintStatusDtoService.Delete(new ComplaintCategoryDto { ID = Guid.Parse("08C8238C-6A54-4DBE-BB2A-E5813E6B67CA") }));
+            Assert.IsTrue(complaintStatusDtoService.Delete(new ComplaintCategoryDto { ID = complaintStatusDtoService.GetAll().OrderByDescending(x => x.ID).FirstOrDefault().ID }));
         }
     }
 }

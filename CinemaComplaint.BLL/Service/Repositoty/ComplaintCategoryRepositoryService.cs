@@ -1,8 +1,8 @@
-﻿using CinemaComplaint.BLL.Dto;
-using CinemaComplaint.BLL.Exceptions;
-using CinemaComplaint.BLL.MapperConfig;
-using CinemaComplaint.BLL.Service.Interface;
-using CinemaComplaint.BLL.Validation;
+﻿using ComplaintForCinema.BLL.Dto;
+using ComplaintForCinema.BLL.Exceptions;
+using ComplaintForCinema.BLL.MapperConfig;
+using ComplaintForCinema.BLL.Service.Interface;
+using ComplaintForCinema.BLL.Validation;
 using ComplaintForCinema.DAL.Model;
 using ComplaintForCinema.DAL.Repository;
 using ComplaintForCinema.DAL.Repository.Repository;
@@ -13,7 +13,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CinemaComplaint.BLL.Service
+namespace ComplaintForCinema.BLL.Service
 {
     public class ComplaintCategoryRepositoryService : IGenericRepositoryService<ComplaintCategoryDto>
     {

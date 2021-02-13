@@ -1,17 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CinemaComplaint.BLL.Dto
+namespace ComplaintForCinema.BLL.Dto
 {
     public class ComplaintLocationDto
     {
-        public Guid ID { get; set; }
+        public Guid? ID { get; set; }
 
+        [DisplayName("Descripcion")]
         public string Description { get; set; }
 
-        public string Status { get; set; }
+        [DisplayName("Estado")]
+        public bool Status { get; set; }
     }
 }

@@ -48,9 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helper\DbHelper.cs" />
-    <Compile Include="Model\Complaint.cs" />
     <Compile Include="Model\ComplaintCategory.cs" />
-    <Compile Include="Model\ComplaintJobHistory.cs" />
     <Compile Include="Model\ComplaintLocation.cs" />
     <Compile Include="Model\ComplaintStatus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

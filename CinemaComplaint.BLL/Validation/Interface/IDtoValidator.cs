@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CinemaComplaint.BLL.Validation.Interface
+namespace ComplaintForCinema.BLL.Validation.Interface
 {
     public interface IDtoValidator<T>
     {

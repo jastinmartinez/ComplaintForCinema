@@ -1,5 +1,5 @@
-﻿using CinemaComplaint.BLL.Dto;
-using CinemaComplaint.BLL.Validation.Interface;
+﻿using ComplaintForCinema.BLL.Dto;
+using ComplaintForCinema.BLL.Validation.Interface;
 using FluentValidation;
 using FluentValidation.Results;
 using System;
@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CinemaComplaint.BLL.Validation
+namespace ComplaintForCinema.BLL.Validation
 {
     public class ComplaintStatusDtoValidator : AbstractValidator<ComplaintStatusDto>, IDtoValidator<ComplaintStatusDto>
     {

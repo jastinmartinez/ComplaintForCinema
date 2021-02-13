@@ -18,7 +18,7 @@ namespace ComplaintForCinema.DAL.Repository.Repository
 
         public ComplaintLocation Get(ComplaintLocation obj)
         {
-            throw new NotImplementedException();
+            return dbConnection.Get<ComplaintLocation>(obj.ComplaintLocationID);
         }
 
         public IEnumerable<ComplaintLocation> GetAll()
@@ -28,7 +28,7 @@ namespace ComplaintForCinema.DAL.Repository.Repository
 
         public long Insert(ComplaintLocation obj)
         {
-            return dbConnection.Insert(new ComplaintLocation { ComplaintLocationID = obj.ComplaintLocationID, ComplaintLocationDescription = obj.ComplaintLocationDescription, ComplaintLocationIsActive = obj.ComplaintLocationIsActive });
+            return dbConnection.Insert(new ComplaintLocation { ComplaintLocationID = Guid.NewGuid(), ComplaintLocationDescription = obj.ComplaintLocationDescription, ComplaintLocationIsActive = obj.ComplaintLocationIsActive });
         }
 
         public bool Update(ComplaintLocation obj)

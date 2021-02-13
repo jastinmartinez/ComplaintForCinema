@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CinemaComplaint.BLL.Service.Interface
+namespace ComplaintForCinema.BLL.Service.Interface
 {
     public interface IGenericRepositoryService<T> where T : class
     {

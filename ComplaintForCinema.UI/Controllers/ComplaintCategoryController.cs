@@ -1,8 +1,8 @@
-﻿using CinemaComplaint.BLL.Dto;
-using CinemaComplaint.BLL.Exceptions;
-using CinemaComplaint.BLL.Service;
-using CinemaComplaint.BLL.Service.Interface;
-using CinemaComplaint.BLL.Validation;
+﻿using ComplaintForCinema.BLL.Dto;
+using ComplaintForCinema.BLL.Exceptions;
+using ComplaintForCinema.BLL.Service;
+using ComplaintForCinema.BLL.Service.Interface;
+using ComplaintForCinema.BLL.Validation;
 using System;
 using System.Net;
 using System.Web.ModelBinding;

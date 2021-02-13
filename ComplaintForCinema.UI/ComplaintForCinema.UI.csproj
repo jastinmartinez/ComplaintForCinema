@@ -171,7 +171,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ComplaintStatusController.cs" />
     <Compile Include="Controllers\ComplaintCategoryController.cs" />
+    <Compile Include="Controllers\ComplaintLocationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -216,8 +218,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
@@ -239,11 +239,22 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\ComplaintCategory\Index.cshtml" />
     <Content Include="Views\ComplaintCategory\Create.cshtml" />
-    <Content Include="Views\ComplaintCategory\Details.cshtml" />
     <Content Include="Views\ComplaintCategory\Delete.cshtml" />
+    <Content Include="Views\ComplaintCategory\Details.cshtml" />
     <Content Include="Views\ComplaintCategory\Edit.cshtml" />
+    <Content Include="Views\ComplaintCategory\Index.cshtml" />
+    <Content Include="Views\ComplaintStatus\Create.cshtml" />
+    <Content Include="Views\ComplaintStatus\Delete.cshtml" />
+    <Content Include="Views\ComplaintStatus\Detail.cshtml" />
+    <Content Include="Views\ComplaintStatus\Details.cshtml" />
+    <Content Include="Views\ComplaintStatus\Index.cshtml" />
+    <Content Include="Views\ComplaintLocation\Index.cshtml" />
+    <Content Include="Views\ComplaintLocation\Create.cshtml" />
+    <Content Include="Views\ComplaintLocation\Details.cshtml" />
+    <Content Include="Views\ComplaintLocation\Delete.cshtml" />
+    <Content Include="Views\ComplaintStatus\Edit.cshtml" />
+    <Content Include="Views\ComplaintLocation\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

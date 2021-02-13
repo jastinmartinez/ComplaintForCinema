@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Linq;
-using ComplaintForCiname.TL.DAL.Interface;
+using ComplaintForCinema.TL.BLL.Interface;
 using ComplaintForCinema.DAL.Model;
 using ComplaintForCinema.DAL.Repository.Repository;
 using DAL.Repository;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace ComplaintForCiname.TL.DAL
+namespace ComplaintForCinema.TL.DAL
 {
     [TestClass]
     public class ComplaintStatusRepositoryUnitTest : IGenericRepositoryUnitTest
@@ -16,7 +16,7 @@ namespace ComplaintForCiname.TL.DAL
         [TestMethod]
         public void A_Insert()
         {
-            Assert.AreEqual(complaintStatusRepository.Insert(new ComplaintStatus { ComplaintStatusID = Guid.Parse("08C8238C-6A54-4DBE-BB2A-E5813E6B67CA"), ComplaintStatusDescription = "Active", ComplaintStatusIsActive = true }), 0);
+            Assert.AreEqual(complaintStatusRepository.Insert(new ComplaintStatus { ComplaintStatusDescription = "Active", ComplaintStatusIsActive = true }), 0);
         }
 
         [TestMethod]
@@ -28,13 +28,13 @@ namespace ComplaintForCiname.TL.DAL
         [TestMethod]
         public void C_Update()
         {
-            Assert.IsTrue(complaintStatusRepository.Update(new ComplaintStatus { ComplaintStatusID = Guid.Parse("08C8238C-6A54-4DBE-BB2A-E5813E6B67CA"), ComplaintStatusDescription = "Inactive", ComplaintStatusIsActive = false }));
+            Assert.IsTrue(complaintStatusRepository.Update(new ComplaintStatus { ComplaintStatusID = complaintStatusRepository.GetAll().OrderByDescending(x => x.ComplaintStatusID).FirstOrDefault().ComplaintStatusID, ComplaintStatusDescription = "Inactive", ComplaintStatusIsActive = false }));
         }
 
         [TestMethod]
         public void D_Delete()
         {
-            Assert.IsTrue(complaintStatusRepository.Delete(new ComplaintStatus { ComplaintStatusID = Guid.Parse("08C8238C-6A54-4DBE-BB2A-E5813E6B67CA") }));
+            Assert.IsTrue(complaintStatusRepository.Delete(new ComplaintStatus { ComplaintStatusID = complaintStatusRepository.GetAll().OrderByDescending(x => x.ComplaintStatusID).FirstOrDefault().ComplaintStatusID }));
         }
     }
 }

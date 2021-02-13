@@ -49,6 +49,8 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\ComplaintLocationRepositoryServiceUnitTest.cs" />
+    <Compile Include="BLL\ComplaintStatusRepositoryServiceUnitTest.cs" />
     <Compile Include="DAL\ComplaintCategoryRepositoryUnitTest.cs" />
     <Compile Include="DAL\ComplaintLocationRepositoryUnitTest.cs" />
     <Compile Include="DAL\ComplaintStatusRepositoryUnitTest.cs" />

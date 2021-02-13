@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CinemaComplaint.BLL.Exceptions
+namespace ComplaintForCinema.BLL.Exceptions
 {
     public class UserValidationException : Exception
     {

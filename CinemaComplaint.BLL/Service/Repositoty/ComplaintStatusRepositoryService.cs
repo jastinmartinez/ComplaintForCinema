@@ -1,7 +1,9 @@
 ﻿using AutoMapper;
-using CinemaComplaint.BLL.Dto;
-using CinemaComplaint.BLL.MapperConfig;
-using CinemaComplaint.BLL.Service.Interface;
+using ComplaintForCinema.BLL.Dto;
+using ComplaintForCinema.BLL.Exceptions;
+using ComplaintForCinema.BLL.MapperConfig;
+using ComplaintForCinema.BLL.Service.Interface;
+using ComplaintForCinema.BLL.Validation;
 using ComplaintForCinema.DAL.Model;
 using ComplaintForCinema.DAL.Repository.Repository;
 using DAL.Repository;
@@ -10,16 +12,18 @@ using System.Collections.Generic;
 
 
 
-namespace CinemaComplaint.BLL.Service
+namespace ComplaintForCinema.BLL.Service
 {
     public class ComplaintStatusRepositoryService : IGenericRepositoryService<ComplaintStatusDto>
     {
 
         private readonly IGenericRepository<ComplaintStatus> complaintStatusRepo;
-     
+        private readonly ComplaintStatusDtoValidator complaintStatusDtoValidator;
+
         public ComplaintStatusRepositoryService()
         {
             complaintStatusRepo = new ComplaintStatusRepository();
+            complaintStatusDtoValidator = new ComplaintStatusDtoValidator();
         }
 
         public bool Delete(ComplaintStatusDto obj)
@@ -29,7 +33,7 @@ namespace CinemaComplaint.BLL.Service
 
         public ComplaintStatusDto Get(ComplaintStatusDto obj)
         {
-            throw new NotImplementedException();
+            return AutoMapperConfiguration.To.Map<ComplaintStatusDto>(complaintStatusRepo.Get(AutoMapperConfiguration.To.Map<ComplaintStatus>(obj)));
         }
 
         public IEnumerable<ComplaintStatusDto> GetAll()
@@ -39,12 +43,20 @@ namespace CinemaComplaint.BLL.Service
 
         public long Insert(ComplaintStatusDto obj)
         {
-            return complaintStatusRepo.Insert(AutoMapperConfiguration.To.Map<ComplaintStatus>(obj));
+            var validationResult = complaintStatusDtoValidator.Validate(obj);
+            if (validationResult.IsValid)
+                return complaintStatusRepo.Insert(AutoMapperConfiguration.To.Map<ComplaintStatus>(obj));
+            else
+                throw new UserValidationException(validationResult.Errors);
         }
 
         public bool Update(ComplaintStatusDto obj)
         {
-            return complaintStatusRepo.Update(AutoMapperConfiguration.To.Map<ComplaintStatus>(obj));
+            var validationResult = complaintStatusDtoValidator.Validate(obj);
+            if (validationResult.IsValid)
+                return complaintStatusRepo.Update(AutoMapperConfiguration.To.Map<ComplaintStatus>(obj));
+            else
+                throw new UserValidationException(validationResult.Errors);
         }
     }
 }

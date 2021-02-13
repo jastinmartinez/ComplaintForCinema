@@ -1,6 +1,9 @@
-﻿using CinemaComplaint.BLL.Dto;
-using CinemaComplaint.BLL.MapperConfig;
-using CinemaComplaint.BLL.Service.Interface;
+﻿using ComplaintForCinema.BLL.Dto;
+using ComplaintForCinema.BLL.Exceptions;
+using ComplaintForCinema.BLL.MapperConfig;
+using ComplaintForCinema.BLL.Service.Interface;
+using ComplaintForCinema.BLL.Validation;
+using ComplaintForCinema.BLL.Validation.Interface;
 using ComplaintForCinema.DAL.Model;
 using ComplaintForCinema.DAL.Repository.Repository;
 using DAL.Repository;
@@ -10,14 +13,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CinemaComplaint.BLL.Service
+namespace ComplaintForCinema.BLL.Service
 {
     public class ComplaintLocationRepositoryService : IGenericRepositoryService<ComplaintLocationDto>
     {
         private readonly IGenericRepository<ComplaintLocation> complaintLocationRepository;
+        private readonly ComplaintLocationDtoValidator complaintLocationDtoValidator;
         public ComplaintLocationRepositoryService()
         {
             complaintLocationRepository = new ComplaintLocationRepository();
+            complaintLocationDtoValidator = new ComplaintLocationDtoValidator();
         }
         public bool Delete(ComplaintLocationDto obj)
         {
@@ -26,7 +31,7 @@ namespace CinemaComplaint.BLL.Service
 
         public ComplaintLocationDto Get(ComplaintLocationDto obj)
         {
-            throw new NotImplementedException();
+            return AutoMapperConfiguration.To.Map<ComplaintLocationDto>(complaintLocationRepository.Get(AutoMapperConfiguration.To.Map<ComplaintLocation>(obj)));
         }
 
         public IEnumerable<ComplaintLocationDto> GetAll()
@@ -36,12 +41,23 @@ namespace CinemaComplaint.BLL.Service
 
         public long Insert(ComplaintLocationDto obj)
         {
-            return complaintLocationRepository.Insert(AutoMapperConfiguration.To.Map<ComplaintLocation>(obj));
+            var validationResult = complaintLocationDtoValidator.Validate(obj);
+
+            if (validationResult.IsValid)
+                return complaintLocationRepository.Insert(AutoMapperConfiguration.To.Map<ComplaintLocation>(obj));
+            else
+                throw new UserValidationException(validationResult.Errors);
         }
 
         public bool Update(ComplaintLocationDto obj)
         {
-            return complaintLocationRepository.Update(AutoMapperConfiguration.To.Map<ComplaintLocation>(obj));
+            var validationResult = complaintLocationDtoValidator.Validate(obj);
+
+            if (validationResult.IsValid)
+                return complaintLocationRepository.Update(AutoMapperConfiguration.To.Map<ComplaintLocation>(obj));
+            else
+                throw new UserValidationException(validationResult.Errors);
+
         }
     }
 }

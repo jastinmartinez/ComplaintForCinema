@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using CinemaComplaint.BLL.Dto;
+using ComplaintForCinema.BLL.Dto;
 using ComplaintForCinema.DAL.Model;
 
-namespace CinemaComplaint.BLL.MapperConfig
+namespace ComplaintForCinema.BLL.MapperConfig
 {
     public class AutoMapperConfiguration
     {

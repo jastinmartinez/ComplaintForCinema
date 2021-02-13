@@ -1,14 +1,14 @@
-﻿@model IEnumerable<ComplaintForCinema.BLL.Dto.ComplaintCategoryDto>
+﻿@model IEnumerable<ComplaintForCinema.BLL.Dto.ComplaintLocationDto>
 
 @{
-    ViewBag.Title = "Categorias";
+    ViewBag.Title = "Ubicaciones";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Categorias</h2>
+<h2>Ubicaciones</h2>
 
 <p>
-    @Html.ActionLink("Nueva Categoria", "Create")
+    @Html.ActionLink("Nueva Ubicacion", "Create")
 </p>
 <table class="table">
     <tr>
@@ -31,7 +31,7 @@
         </td>
         <td>
             @Html.ActionLink("Editar", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Detalle", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.ID }) |
             @Html.ActionLink("Eliminar", "Delete", new { id=item.ID })
         </td>
     </tr>
